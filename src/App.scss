@@ -22,14 +22,26 @@ nav {
   width: 100%;
   border-bottom: 0.1em solid #dbdbdb;
   grid-template-columns: 2fr 1fr 1fr 0.5fr;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
+  }
 }
 
 .logo {
   text-decoration: none;
+
+  @media screen and (max-width: 768px) {
+    // flex: 1 0 127px;
+    // width: 20%;
+    margin-left: 15px;
+  }
 }
 
 .logo > img {
   vertical-align: middle;
+  // padding-left: -80px;
 }
 
 .search {
@@ -39,6 +51,11 @@ nav {
   width: 15.5em;
   border: 0.07em solid #dbdbdb;
   border-radius: 0.2em;
+
+  @media screen and (max-width: 768px) {
+    // width: 12em;
+    display: none;
+  }
 }
 
 .search::placeholder {
@@ -49,15 +66,39 @@ nav {
 .nav-links {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
+
+  button {
+    font-size: 24px;
+  }
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+    justify-content: space-around;
+    flex: 1 0 127px;
+    position: relative;
+  }
 }
 
 .nav-links i {
   transform: scale(1.6);
   color: #252525;
+
+  button {
+    svg {
+      width: 1.6em;
+      height: 1.6em;
+      font-size: 24px;
+    }
+    // font-size: 24px;
+  }
 }
 
 .container {
   padding: 0 15%;
+
+  @media screen and (max-width: 640px) {
+    padding: 0;
+  }
 }
 
 .bio {
@@ -68,6 +109,12 @@ nav {
   border-bottom: 0.2px solid #dbdbdb;
   margin-top: 5em;
   margin-bottom: 2em;
+
+  @media screen and (max-width: 768px) {
+    grid-template-columns: 1fr;
+    margin-top: 1.5em;
+    padding: 1em 1em;
+  }
 }
 
 #profilePhotoInput {
@@ -86,7 +133,7 @@ nav {
   .profile-photo {
     width: 5em;
     height: 5em;
-    margin-top: 3em;
+    margin-top: 2em;
     margin-right: 2em;
   }
 }
@@ -153,6 +200,11 @@ nav {
   bottom: 5em;
   right: 7em;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    bottom: 2em;
+    right: 2em;
+  }
 }
 
 .gallery {
@@ -160,6 +212,7 @@ nav {
   grid-template-columns: 1fr 1fr 1fr;
   row-gap: 1.7em;
   column-gap: 1em;
+  padding: 0 1em;
 }
 
 .item {
@@ -167,6 +220,16 @@ nav {
   width: 17.5em;
   background: #000;
   cursor: pointer;
+
+  @media screen and (max-width: 768px) {
+    height: 12.5em;
+    width: 12.5em;
+  }
+
+  @media screen and (max-width: 600px) {
+    height: 6em;
+    width: 6em;
+  }
 }
 
 .item-image {
@@ -189,6 +252,16 @@ nav {
   color: #fff;
   border: 1px solid #c8c8c8;
   transform: scale(1.5);
+
+  @media screen and (max-width: 768px) {
+    margin-left: -6em;
+    margin-top: 5em;
+  }
+
+  @media screen and (max-width: 600px) {
+    margin-left: -5.6em;
+    margin-top: 3em;
+  }
 }
 
 .delete-button:hover {
@@ -198,4 +271,22 @@ nav {
 
 .item:hover .delete-button {
   opacity: 1;
+}
+
+.modal__spinner {
+  animation: spin 2s linear infinite;
+  font-size: 40px;
+  color: #1b6aae;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  50% {
+    transform: rotate(180deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
