@@ -1,6 +1,9 @@
 import React from "react";
 import instagramLogo from "../assets/instagram.png";
-import { FaHome, FaCommentAlt, FaCompass, FaHeart } from "react-icons/fa";
+import { AiOutlineHeart, AiOutlineCompass } from "react-icons/ai";
+import { IoPaperPlaneOutline } from "react-icons/io5";
+import { FiPlusSquare } from "react-icons/fi";
+import { BiHomeAlt } from "react-icons/bi";
 
 const Nav = () => {
   return (
@@ -8,19 +11,22 @@ const Nav = () => {
       <button className="logo">
         <img src={instagramLogo} alt="logo" />
       </button>
-      <input type="text" placeholder="Search" className="search" />
+      <input type="tex  t" placeholder="Search" className="search" />
       <span className="nav-links">
         <button>
-          <FaHome />
+          <BiHomeAlt />
         </button>
         <button>
-          <FaCommentAlt />
+          <IoPaperPlaneOutline />
         </button>
         <button>
-          <FaCompass />
+          <FiPlusSquare />
         </button>
         <button>
-          <FaHeart />
+          <AiOutlineCompass />
+        </button>
+        <button>
+          <AiOutlineHeart />
         </button>
       </span>
     </nav>
